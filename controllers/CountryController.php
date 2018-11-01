@@ -75,7 +75,7 @@ class CountryController extends Controller
         $searchModel = new CountrySearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('@vendor/lowbase/yii2-user/views/country/index', [
+        return $this->render('@vendor/macfiss/yii2-user/views/country/index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -89,7 +89,7 @@ class CountryController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('@vendor/lowbase/yii2-user/views/country/view', [
+        return $this->render('@vendor/macfiss/yii2-user/views/country/view', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -106,7 +106,7 @@ class CountryController extends Controller
             Yii::$app->getSession()->setFlash('success', Yii::t('user', 'Новая страна создана.'));
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('@vendor/lowbase/yii2-user/views/country/create', [
+            return $this->render('@vendor/macfiss/yii2-user/views/country/create', [
                 'model' => $model,
             ]);
         }
@@ -126,7 +126,7 @@ class CountryController extends Controller
             Yii::$app->getSession()->setFlash('success', Yii::t('user', 'Страна отредактирована.'));
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('@vendor/lowbase/yii2-user/views/country/update', [
+            return $this->render('@vendor/macfiss/yii2-user/views/country/update', [
                 'model' => $model,
             ]);
         }

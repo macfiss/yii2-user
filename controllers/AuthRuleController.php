@@ -70,7 +70,7 @@ class AuthRuleController extends Controller
         $searchModel = new AuthRuleSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('@vendor/lowbase/yii2-user/views/auth-rule/index', [
+        return $this->render('@vendor/macfiss/yii2-user/views/auth-rule/index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -84,7 +84,7 @@ class AuthRuleController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('@vendor/lowbase/yii2-user/views/auth-rule/view', [
+        return $this->render('@vendor/macfiss/yii2-user/views/auth-rule/view', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -101,7 +101,7 @@ class AuthRuleController extends Controller
             Yii::$app->getSession()->setFlash('success', Yii::t('user', 'Правило контроля доступа создано.'));
             return $this->redirect(['view', 'id' => $model->name]);
         } else {
-            return $this->render('@vendor/lowbase/yii2-user/views/auth-rule/create', [
+            return $this->render('@vendor/macfiss/yii2-user/views/auth-rule/create', [
                 'model' => $model,
             ]);
         }

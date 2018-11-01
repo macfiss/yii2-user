@@ -100,11 +100,11 @@ class UserController extends Controller
         }
 
         if (method_exists($this->module, 'getCustomView')) {
-            return $this->render($this->module->getCustomView('signup', '@vendor/lowbase/yii2-user/views/user/signup'), [
+            return $this->render($this->module->getCustomView('signup', '@vendor/macfiss/yii2-user/views/user/signup'), [
                 'model' => $model,
             ]);
         } else {
-            return $this->render('@vendor/lowbase/yii2-user/views/user/signup', [
+            return $this->render('@vendor/macfiss/yii2-user/views/user/signup', [
                 'model' => $model,
             ]);
         }
@@ -136,12 +136,12 @@ class UserController extends Controller
         }
         
         if (method_exists($this->module, 'getCustomView')) {
-            return $this->render($this->module->getCustomView('login', '@vendor/lowbase/yii2-user/views/user/login'), [
+            return $this->render($this->module->getCustomView('login', '@vendor/macfiss/yii2-user/views/user/login'), [
                 'model' => $model,
                 'forget' => $forget
             ]);
         } else {
-            return $this->render('@vendor/lowbase/yii2-user/views/user/login', [
+            return $this->render('@vendor/macfiss/yii2-user/views/user/login', [
                 'model' => $model,
                 'forget' => $forget
             ]);
@@ -229,11 +229,11 @@ class UserController extends Controller
         }
         
         if (method_exists($this->module, 'getCustomView')) {
-            return $this->render($this->module->getCustomView('profile', '@vendor/lowbase/yii2-user/views/user/profile'), [
+            return $this->render($this->module->getCustomView('profile', '@vendor/macfiss/yii2-user/views/user/profile'), [
                 'model' => $model,
             ]);
         } else {
-            return $this->render('@vendor/lowbase/yii2-user/views/user/profile', [
+            return $this->render('@vendor/macfiss/yii2-user/views/user/profile', [
                 'model' => $model,
             ]);
         }
@@ -252,11 +252,11 @@ class UserController extends Controller
         $model = $this->findModel($id);
 
         if (method_exists($this->module, 'getCustomView')) {
-            return $this->render($this->module->getCustomView('show', '@vendor/lowbase/yii2-user/views/user/show'), [
+            return $this->render($this->module->getCustomView('show', '@vendor/macfiss/yii2-user/views/user/show'), [
                 'model' => $model,
             ]);
         } else {
-            return $this->render('@vendor/lowbase/yii2-user/views/user/show', [
+            return $this->render('@vendor/macfiss/yii2-user/views/user/show', [
                 'model' => $model,
             ]);
         }
@@ -302,7 +302,7 @@ class UserController extends Controller
         $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('@vendor/lowbase/yii2-user/views/user/index', [
+        return $this->render('@vendor/macfiss/yii2-user/views/user/index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -316,7 +316,7 @@ class UserController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('@vendor/lowbase/yii2-user/views/user/view', [
+        return $this->render('@vendor/macfiss/yii2-user/views/user/view', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -349,7 +349,7 @@ class UserController extends Controller
             }
         }
 
-        return $this->render('@vendor/lowbase/yii2-user/views/user/update', [
+        return $this->render('@vendor/macfiss/yii2-user/views/user/update', [
             'model' => $model
         ]);
     }

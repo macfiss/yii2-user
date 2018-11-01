@@ -114,7 +114,7 @@ class CityController extends Controller
         $searchModel = new CitySearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('@vendor/lowbase/yii2-user/views/city/index', [
+        return $this->render('@vendor/macfiss/yii2-user/views/city/index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -128,7 +128,7 @@ class CityController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('@vendor/lowbase/yii2-user/views/city/view', [
+        return $this->render('@vendor/macfiss/yii2-user/views/city/view', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -145,7 +145,7 @@ class CityController extends Controller
             Yii::$app->getSession()->setFlash('success', Yii::t('user', 'Новый город создан.'));
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('@vendor/lowbase/yii2-user/views/city/create', [
+            return $this->render('@vendor/macfiss/yii2-user/views/city/create', [
                 'model' => $model,
             ]);
         }
@@ -165,7 +165,7 @@ class CityController extends Controller
             Yii::$app->getSession()->setFlash('success', Yii::t('user', 'Город отредактирован.'));
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('@vendor/lowbase/yii2-user/views/city/update', [
+            return $this->render('@vendor/macfiss/yii2-user/views/city/update', [
                 'model' => $model,
             ]);
         }

@@ -72,7 +72,7 @@ class AuthItemController extends Controller
         $searchModel = new AuthItemSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         
-        return $this->render('@vendor/lowbase/yii2-user/views/auth-item/index', [
+        return $this->render('@vendor/macfiss/yii2-user/views/auth-item/index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -86,7 +86,7 @@ class AuthItemController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('@vendor/lowbase/yii2-user/views/auth-item/view', [
+        return $this->render('@vendor/macfiss/yii2-user/views/auth-item/view', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -104,7 +104,7 @@ class AuthItemController extends Controller
             Yii::$app->getSession()->setFlash('success', $message);
             return $this->redirect(['view', 'id' => $model->name]);
         } else {
-            return $this->render('@vendor/lowbase/yii2-user/views/auth-item/create', [
+            return $this->render('@vendor/macfiss/yii2-user/views/auth-item/create', [
                 'model' => $model,
             ]);
         }
@@ -126,7 +126,7 @@ class AuthItemController extends Controller
             Yii::$app->getSession()->setFlash('success', $message);
             return $this->redirect(['view', 'id' => $model->name]);
         } else {
-            return $this->render('@vendor/lowbase/yii2-user/views/auth-item/update', [
+            return $this->render('@vendor/macfiss/yii2-user/views/auth-item/update', [
                 'model' => $model,
             ]);
         }
